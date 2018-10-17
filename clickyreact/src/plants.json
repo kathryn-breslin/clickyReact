@@ -1,0 +1,60 @@
+[{
+    "id": 1, 
+    "image": "https://garden.org/pics/2015-03-29/dirtdorphins/e04a2e-250.jpg", 
+    "clicked": false
+}, 
+{
+    "id": 2, 
+    "image": "https://greenerynyc.com/wp-content/uploads/2016/08/Rubber_Plant-Fiberstone-Egg-250x250.jpg",
+    "clicked": false
+},
+{
+    "id": 3, 
+    "image": "http://3.imimg.com/data3/HT/MF/MY-1229438/fruit-tree-250x250.jpg",
+    "clicked": false
+}, 
+{
+    "id": 4, 
+    "image": "https://garden.org/pics/2016-06-17/foraygardengirl/4d63ce-250.jpg",
+    "clicked": false
+},
+{
+    "id": 5, 
+    "image": "https://5.imimg.com/data5/TE/XH/MY-12914298/kadi-patta-plant-250x250.jpg",
+    "clicked": false
+}, 
+{
+    "id": 6, 
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ03UURBMpRelm2ndMHkGAMKmpAWa0F0n4y1EXDP1xzvD0njaaS",
+    "clicked": false
+},
+{
+    "id": 7,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRN81MjXXYNcUzDcaPw6xHN7PopVSBMrLZuM863JLal5PrX7TK",
+    "clicked": false
+}, 
+{
+    "id": 8, 
+    "image": "http://www.nutshellnursery.com.au/wp-content/uploads/Achillea_Antarctica_-250x250.jpg",
+    "clicked": false
+},
+{
+    "id": 9,
+    "image": "https://edgeofthewoodsnursery.com/wp-content/uploads/2018/03/senecio-cropped.jpg",
+    "clicked": false
+},
+{
+    "id": 10,
+    "image": "https://fairviewgardencenter.com/wp-content/uploads/2017/02/cherry-blossom-250x250.jpg",
+    "clicked": false
+}, 
+{
+    "id": 11,
+    "image": "https://s3.amazonaws.com/cdn0.michiganbulb.com/images/250/66098.jpg",
+    "clicked": false
+},
+{
+    "id": 12,
+    "image": "https://wolfriver.org/assets/2227/9_ironweed26.jpg",
+    "clicked": false
+}]

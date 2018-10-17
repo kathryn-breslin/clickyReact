@@ -4,12 +4,12 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 
 const App = () => (
-  <Router>
+        <Router>
     <div>
-      <Header />
-      <Route exact path="/" component={Home} />
+        <Header />
+        <Route exact path="/" component={Home} />
     </div>
-  </Router>
+</Router>
 );
 
 export default App;

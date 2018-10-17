@@ -1,67 +1,58 @@
 import React, { Component } from "react";
-import API from "../utils/API";
-import ImageCard from "../components/ImageCard";
-import Header from "../components/Header";
+import Card from "../components/PlantCard";
 import Container from "../components/Container";
-import Row from "../components/Row";
 import Col from "../components/Col";
+import plants from "../plants.json";
+import "./Home.css"
+
+let correctGuesses = 0; 
+let score = 0; 
+let click = 0; 
 
 class Home extends Component {
     state = {
-        image: "",
-        click: false,
-        clickCount: 0
-    };
-
-    componentDidMount() {
-        this.shuffleGroup();
+        plants,
+        click,
+        correctGuesses,
+        score, 
     }
 
-    //click handler function
+    handleClick = (event)=> {
+    event.preventDefault();
 
-    handleClick = event => {
+    const newPlants = this.state.plants.sort(() => Math.random() - 0.5);
+    this.setState(newPlants);
+    this.setState({ click: this.state.click + 1 });
 
-        const btnType = event.target.attributes.getNamedItem("data-value").value;
-
-        const newState = { ...this.state };
-
-        if (btnType === "pick") {
-            newState.click = 1;
-
-            newState.clickCount = newState.click
-                ? newState.clickCount + 1
-                : newState.clickCount;
-        } else {
-            newState.click = false;
-        }
-
-        this.setState(newState)
-        this.shuffleGroup();
+        // if ({click: this.state.click} >= 1 ) {
+        //     this.setState({ plants: Math.floor(Math.random() + 1)});
+        // }
     };
 
-    shuffleGroup = () => {
-        API.getRandomPhotos()
-            .then(res => 
-                this.setState({
-                image: res.data.message
-            })).catch(err => console.log(err));
-    }
+    // handleShuffle = () => {
+    //     // const shufflePlants = {...this.state};
+    //     this.setState({ plants: Math.floor(Math.random())});
+    // }
+
     render() {
         return (
             <Container style={{ marginTop: 30 }}>
-                <Row>
-                    <Col size="md-12">
+                <Col size="md-6">
                     <div>
-                        <h4>This is where the image should be</h4>
-                        <ImageCard image={this.state.image} handleClick={this.handleClick} />
-                        <h1> Score {this.state.clickCount}</h1>
+                        <p>Click Count: {this.state.click}</p>
                     </div>
-                    </Col>
-                </Row>
-                
+                </Col>
+                <Col size="md-12">
+                    {this.state.plants.map(plant => (
+                        <button onClick={this.handleClick} key={plant.id}>
+                            <Card  
+                            image={plant.image}
+                        />
+                        </button>
+                    ))}
+                </Col>
             </Container>
         )
     }
 }
-
 export default Home;
