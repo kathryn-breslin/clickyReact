@@ -2,11 +2,11 @@ import React from "react";
 import "./PlantCard.css";
 
 const Card = props => (
-    <div className="card">
-        <div className="img-container">
-            <img src={props.image}/>
+        <div className="card" value={props.id} onClick={() => props.handleClick(props.id)}>
+            <div className="img-container">
+                <img alt={props.id} src={props.image} />
+            </div>
         </div>
-    </div>
 );
 
 export default Card;

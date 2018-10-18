@@ -1,58 +1,90 @@
 import React, { Component } from "react";
+import Wrapper from "../components/Wrapper";
+import Header from "../components/Header";
 import Card from "../components/PlantCard";
 import Container from "../components/Container";
 import Col from "../components/Col";
 import plants from "../plants.json";
 import "./Home.css"
 
-let correctGuesses = 0; 
-let score = 0; 
-let click = 0; 
-
 class Home extends Component {
     state = {
         plants,
-        click,
-        correctGuesses,
-        score, 
+        currentScore: 0,
+        maxScore: 0,
+        clicked: [],
     }
 
-    handleClick = (event)=> {
-    event.preventDefault();
+    shuffleArray = () => {
+        this.state.plants.sort(() => Math.random() - 0.5);
+    }
 
-    const newPlants = this.state.plants.sort(() => Math.random() - 0.5);
-    this.setState(newPlants);
-    this.setState({ click: this.state.click + 1 });
-
-        // if ({click: this.state.click} >= 1 ) {
-        //     this.setState({ plants: Math.floor(Math.random() + 1)});
-        // }
+    handleClick = (id) => {
+        if (this.state.clicked.indexOf(id) === -1) {
+            this.setState({ clicked: this.state.clicked.concat(id) })
+            this.increaseClick();
+        } else {
+            this.resetImages();
+        }
     };
 
-    // handleShuffle = () => {
-    //     // const shufflePlants = {...this.state};
-    //     this.setState({ plants: Math.floor(Math.random())});
-    // }
+    increaseClick = () => {
+        const newScore = this.state.currentScore + 1;
+        // this.setState({ click: this.state.click + 1 });
+
+        this.setState({ currentScore: newScore });
+
+        if (newScore >= this.state.maxScore) {
+            this.setState({ maxScore: newScore })
+        }
+        else if (newScore === 12) {
+            console.log("You win!")
+        }
+        this.shuffleArray();
+    }
+
+    resetImages = () => {
+        this.setState({
+            currentScore: 0,
+            maxScore: 0,
+            clicked: [],
+        });
+        this.shuffleArray();
+    }
 
     render() {
         return (
-            <Container style={{ marginTop: 30 }}>
-                <Col size="md-6">
-                    <div>
-                        <p>Click Count: {this.state.click}</p>
-                    </div>
-                </Col>
-                <Col size="md-12">
-                    {this.state.plants.map(plant => (
-                        <button onClick={this.handleClick} key={plant.id}>
-                            <Card  
-                            image={plant.image}
-                        />
-                        </button>
-                    ))}
-                </Col>
-            </Container>
+            <Wrapper>
+                <Header
+                    score={this.state.currentScore}
+                    maxScore={this.state.maxScore}
+                >
+                    <Col>
+                        <div>
+                            <h1>Click Count: {this.state.score}</h1>
+                        </div>
+                    </Col>
+                </Header>
+                <Container style={{ marginTop: 30 }}>
+                    <Col size="md-12">
+                        {this.state.plants.map(plant => (
+                            // <button onClick={this.handleClick} key={plant.id}>
+                            <Card
+                                shuffleArray={this.shuffleArray}
+                                handleClick={this.handleClick}
+                                resetImages={this.resetImages}
+                                increaseClick={this.increaseClick}
+                                key={plant.id}
+                                id={plant.id}
+                                image={plant.image}
+                            />
+                            // </button>
+                        ))}
+                    </Col>
+                </Container>
+            </Wrapper>
         )
     }
 }
+
 export default Home;
