@@ -1,0 +1,31 @@
+nav {
+    background-color: #83A068;
+    color: white;
+}
+
+#nav {
+    position: fixed;
+    height: 115px;
+    margin-bottom: 40px;
+    /* top: 0; */
+    width: 100%;
+    z-index:1;
+}
+
+#left {
+    margin: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+}
+
+#right {
+    margin: 40px;
+    margin-left: 900px;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+#right2 {
+    margin-left: 1079px;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+}

@@ -1,3 +1,18 @@
-nav.navbar.navbar-default {
-    margin-botton: 0;
+div .head {
+    background-color: #83A068;
+    height: 500px;
+    color: white;
+    text-align: center;
 }
+
+#header{
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 150px;
+    text-shadow: 2px 2px 8px #000000;
+    margin-top: 100px;
+}
+
+#intro {
+    font-family: 'Roboto', sans-serif;
+}
+

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Wrapper from "../components/Wrapper";
+import Nav from "../components/Nav";
 import Header from "../components/Header";
 import Card from "../components/PlantCard";
 import Container from "../components/Container";
@@ -46,7 +47,7 @@ class Home extends Component {
     resetImages = () => {
         this.setState({
             currentScore: 0,
-            maxScore: 0,
+            maxScore: this.state.maxScore,
             clicked: [],
         });
         this.shuffleArray();
@@ -55,15 +56,11 @@ class Home extends Component {
     render() {
         return (
             <Wrapper>
-                <Header
+                <Nav
                     score={this.state.currentScore}
-                    maxScore={this.state.maxScore}
-                >
-                    <Col>
-                        <div>
-                            <h1>Click Count: {this.state.score}</h1>
-                        </div>
-                    </Col>
+                    totalScore={this.state.maxScore}>
+                </Nav>
+                <Header>
                 </Header>
                 <Container style={{ marginTop: 30 }}>
                     <Col size="md-12">
