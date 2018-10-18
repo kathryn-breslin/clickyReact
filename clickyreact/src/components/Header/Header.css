@@ -3,6 +3,7 @@ div .head {
     height: 500px;
     color: white;
     text-align: center;
+    position: relative;
 }
 
 #header{

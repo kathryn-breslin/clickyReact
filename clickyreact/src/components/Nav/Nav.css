@@ -6,26 +6,30 @@ nav {
 #nav {
     position: fixed;
     height: 115px;
-    margin-bottom: 40px;
+    padding-bottom: 30px;
+    padding-top: 40px;
     /* top: 0; */
     width: 100%;
     z-index:1;
 }
 
 #left {
-    margin: 40px;
+    /* margin: 40px; */
+    margin-left:20px;
     font-family: 'Roboto', sans-serif;
     font-size: 30px;
 }
 
 #right {
-    margin: 40px;
-    margin-left: 900px;
+    /* margin: 40px; */
+    margin-left:20px;
     font-size: 30px;
     font-family: 'Roboto', sans-serif;
 }
 #right2 {
-    margin-left: 1079px;
+    /* margin-left: 1079px; */
+    margin-left:20px;
+    margin-right: 20px;
     font-size: 30px;
     font-family: 'Roboto', sans-serif;
 }

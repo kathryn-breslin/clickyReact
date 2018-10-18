@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Card from "../components/PlantCard";
 import Container from "../components/Container";
 import Col from "../components/Col";
+import Footer from "../components/Footer";
 import plants from "../plants.json";
 import "./Home.css"
 
@@ -79,6 +80,7 @@ class Home extends Component {
                         ))}
                     </Col>
                 </Container>
+                <Footer/>
             </Wrapper>
         )
     }
